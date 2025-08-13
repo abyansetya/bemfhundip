@@ -31,11 +31,11 @@ get_header();
             <div class="container mt-5">
                 <div class="row" style="margin-bottom: 80px">
 					<div class="col-lg-4 col-md-4 col-sm-4">
-                        <img class="img-fluid px-5" src="https://bem.fh.undip.ac.id/wp-content/uploads/2024/12/puniks-1.png" alt="Logo-1">
+                        <img class="img-fluid px-5 " src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-PADI-DAN-KAPAS.png" alt="Logo-1">
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8">
                         <h3 style="text-align: justify;line-height: 1.5;">
-							PHOENIX
+							Padi dan Kapas
                         </h4>
 						<p style="font-size:22px;text-align: justify">
 							Burung Phoenix bermakna keabadian. Sejarahnya Dewa Matahari menemukan burung tersebut dan terpesona akan keindahannya, hingga burung tersebut diberikan kekuatan yang abadi. Selaras dengan hal demikian, BEM FH Undip 2024 bertanggung jawab untuk dapat memberikan kebermanfaatan dan kebermaknaan secara berkelanjutan. 
@@ -46,18 +46,18 @@ get_header();
 				<div class="row" style="margin-bottom: 80px">
                     <div class="col-lg-8 col-md-8 col-sm-8">
                         <h3 style="text-align: justify;line-height: 1.5;">
-							TUBUH
+							Kelopak Padi
                         </h4>
 						<p style="font-size:22px;text-align: justify">
 							Tubuh dari Burung Phoenix dimaknai sebagai budaya organisasi dari BEM FH Undip 2024, yakni budaya tanggap yang harapannya dapat menyeluruh menjadi iklim kebiasaan bagi BEM FH Undip 2024.
 						</p>
                     </div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
-                        <img class="img-fluid px-5" src="https://bem.fh.undip.ac.id/wp-content/uploads/2024/12/tubuhh.png" alt="Logo-1">
+                        <img class="img-fluid px-5" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-KELOPAK-DAN-PADI.png" alt="Logo-1">
                     </div>
                 </div>
 				
-				<div class="row" style="margin-bottom: 80px">
+				<div class="row" style="margin-bottom: 70px">
 					<div class="col-lg-4 col-md-4 col-sm-4">
                         <img class="img-fluid px-5" src="https://bem.fh.undip.ac.id/wp-content/uploads/2024/12/sayap.png" alt="Logo-1">
                     </div>

@@ -485,14 +485,14 @@
           <div class="container">
 
             <!-- Navbar Brand -->
-            <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logobemfh.svg" alt="logo" class="logo xs"></a>
+            <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bemfh.png" alt="logo" class="logo xs"></a>
             <a class="navbar-brand md d-none d-md-block me-1" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logoundip.svg" alt="logo" class="logo md"></a>
             <a class="navbar-brand md d-none d-md-block" href="<?php echo esc_url(home_url()); ?>">
-              <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logobemfh.svg" alt="logo" class="logo md">
+              <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bemfh.png" alt="logo" class="logo xs">
             </a>
             <h6 class="landing-icon-text fw-bolder mt-2 mb-2" style="color: #C14953;">BEM FAKULTAS HUKUM <p class="mb-0">UNIVERSITAS DIPONEGORO</p></h6>
-
-            <!-- Offcanvas Navbar -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="bootscore-navbar-desktop">
+             <!-- Offcanvas Navbar -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
               <div class="offcanvas-header bg-light">
                 <span class="h5 mb-0"><?php esc_html_e('Menu', 'bootscore'); ?></span>
