@@ -48,7 +48,7 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '#P&+-2Y(&*s>51eS28EU)6JzY{H+Il|ZD9$9VX{;_Kq5 -B!aw%ots+oj>Jzx`vJ' );
+define( 'AUTH_KEY',         '#P&+-2Y(&*s>51eS28EU)6JzY{H+Il|ZD9$9VX{;_Kq5 -B!aw%ots+oj>Jzx`vJ');
 define( 'SECURE_AUTH_KEY',  'pmIO(nJ+<,D54b7:9>KlSva,B[b Q7?^zSmoZQ4,&(W4@%HREwSOJ< v:Cc;U5jT' );
 define( 'LOGGED_IN_KEY',    '-L)kt3umf%0~j(m?QlZRK;f+|<T9+jL6,Yf#7d=j*./]X<%vP%sFiGP=TcgTdV.:' );
 define( 'NONCE_KEY',        'Cna{}6AXztJIG5_;R}q?kkyW6~(k%kX9uJ@M<X406 oBk+PxHN=51hF&|Q4&kGT{' );

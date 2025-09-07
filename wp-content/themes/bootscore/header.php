@@ -80,6 +80,45 @@
 	.bg-section {
 		background: linear-gradient(356deg, #E68842 44.79%, #C33736 100%);
 	}
+
+    /* Logo Styling */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin-right: 15px !important;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo.xs {
+      height: 45px;
+    }
+
+    .logo.md {
+      height: 50px;
+    }
+
+    /* Logo spacing adjustments */
+    .navbar-brand.xs {
+      margin-right: 0 !important;
+    }
+
+    .navbar-brand.md {
+      margin-right: 10px !important;
+    }
+
+    @media (max-width: 767.98px) {
+      .logo {
+        height: 40px;
+      }
+      .logo.xs {
+        height: 35px;
+      }
+    }
 	  
     #listinformasi {
       scrollbar-color: #d4aa70 #e4e4e4;
@@ -484,13 +523,29 @@
 
           <div class="container">
 
-            <!-- Navbar Brand -->
-            <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bemfh.png" alt="logo" class="logo xs"></a>
-            <a class="navbar-brand md d-none d-md-block me-1" href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logoundip.svg" alt="logo" class="logo md"></a>
-            <a class="navbar-brand md d-none d-md-block" href="<?php echo esc_url(home_url()); ?>">
+            <!-- Navbar Brand Mobile -->
+            <a class="navbar-brand xs d-md-none" href="<?php echo esc_url(home_url()); ?>">
               <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bemfh.png" alt="logo" class="logo xs">
             </a>
-            <h6 class="landing-icon-text fw-bolder mt-2 mb-2" style="color: #C14953;">BEM FAKULTAS HUKUM <p class="mb-0">UNIVERSITAS DIPONEGORO</p></h6>
+            
+            <!-- Navbar Brand Desktop -->
+            <div class="d-none d-md-flex align-items-center">
+              <a class="navbar-brand md" href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logoundip.svg" alt="logo undip" class="logo md">
+              </a>
+              <a class="navbar-brand md" href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bemfh.png" alt="logo bem" class="logo md">
+              </a>
+              <a class="navbar-brand md" href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/logo-kelopakbunga.png" alt="logo juang asa" class="logo md">
+              </a>
+            </div>
+            
+            <h6 class="landing-icon-text fw-bolder mt-2 mb-2 d-none d-md-block" style="color: #C14953;">
+              BEM FAKULTAS HUKUM 
+              <p class="mb-0">UNIVERSITAS DIPONEGORO</p>
+            </h6>
+
             <div class="collapse navbar-collapse d-none d-lg-block" id="bootscore-navbar-desktop">
              <!-- Offcanvas Navbar -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
