@@ -41,3 +41,11 @@ ul.wp-block-rss.is-grid li{
   list-style:none;
   padding:0;
 }
+
+@font-face {
+  font-family: 'Norwester';
+  src: url('fontawesome/webfonts/Norwester-Regular.woff2') format('woff2'),
+       url('fontawesome/webfonts/Norwester-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
