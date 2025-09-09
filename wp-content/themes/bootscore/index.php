@@ -20,10 +20,22 @@ get_header();
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Roboto';
+    src: url('<?php echo get_stylesheet_directory_uri(); ?>/fontawesome/webfonts/Roboto.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   .norwester {
     font-family: 'Norwester', sans-serif;
     letter-spacing: 2px;
     /* opsional */
+  }
+
+  .roboto {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
   }
 
   .neon-text {
@@ -55,19 +67,144 @@ get_header();
   .text-stack .base {
     color: #c14953;
     text-shadow:
-      0 0 5px #c14953,
-      0 0 10px #c14953,
-      0 0 20px #c14953,
-      0 0 40px #ff6b81,
-      0 0 80px #ff6b81;
+      0 0 0px #c14953,
+      0 0 0px #c14953,
+      0 0 0px #c14953,
+      0 0 0px #ff6b81,
+      0 0 20px #ff6b81;
+  }
+
+  .text-stack .base2 {
+    color: #ce770c;
+    text-shadow:
+      0 0 5px #ce770c,
+      0 0 10px #ce770c,
+      0 0 20px #ce770c,
+      0 0 40px #ce770c,
+      0 0 80px #ce770c;
+    opacity: 50%;
+  }
+
+  .text-stack .base3 {
+    color: #ce770c;
+    text-shadow:
+      0 0 5px #ce770c,
+      0 0 10px #ce770c,
+      0 0 20px #ce770c,
+      0 0 40px #ce770c,
+      0 0 80px #ce770c;
+    opacity: 50%;
   }
 
   .text-stack .overlay {
     color: white;
-    top: 5px;
+    top: -2px;
     /* geser ke bawah */
-    left: -5px;
+    left: -6px;
     /* geser ke kiri */
+    text-shadow:
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 20px white;
+  }
+
+  .text-stack .overlay3 {
+    color: #ce770c;
+    top: -2px;
+    /* geser ke bawah */
+    left: -6px;
+    /* geser ke kiri */
+    text-shadow:
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 20px white;
+  }
+
+  .curved-svg-base {
+    font-family: 'Norwester', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    fill: #ce770c;
+    /* Warna coklat untuk base text */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  .curved-svg-overlay {
+    font-family: 'Norwester', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    fill: white;
+    /* Warna emas untuk overlay text */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+
+    .curved-svg-base,
+    .curved-svg-overlay {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    .curved-svg-base,
+    .curved-svg-overlay {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .menu-box1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 kolom */
+    gap: 10px;
+    max-width: 600px;
+    /* opsional, biar rapih di tengah */
+    margin: 0 auto;
+  }
+
+  .menu-item1 {
+    background-color: #c14953;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* Responsive: di mobile jadi 1 kolom */
+  @media (max-width: 768px) {
+    .menu-box1 {
+      grid-template-columns: 1fr;
+      /* ubah jadi 1 kolom */
+    }
+
+    .center-item1 {
+      grid-column: auto;
+      justify-self: stretch;
+      width: 100%;
+    }
+  }
+
+  .center-item1 {
+    grid-column: span 2;
+    /* biar pakai 2 kolom */
+    justify-self: center;
+    /* taruh di tengah */
+    width: fit-content;
+    /* biar kotaknya ngepas isi */
   }
 </style>
 
@@ -81,18 +218,49 @@ get_header();
       <header class="entry-header featured-full-width-img  d-flex align-items-center justify-content-center text-center"
         style="background-position: center; background-size: cover; background-color: #FFF3E9; height:100vh; background-image: url('https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/2.png');">
 
-        <div class="container">
-
-          <div class=" text-stack">
+        <!-- HERO SECTION -->
+        <div class="" style="display:flex; flex-direction: column; align-items:center;">
+          <div class="text-stack">
             <h1 class="norwester base">WELCOME TO <br> BEM FH UNDIP 2025</h1>
             <h1 class="norwester overlay" style="position: absolute;">WELCOME TO <br> BEM FH UNDIP 2025</h1>
           </div>
           <br>
-          <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/LOGO-JUANG-ASA.png"
-            alt="logo" class="img-fluid" style="max-width:300px; margin-top:20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <!-- Logo Image -->
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/LOGO-JUANG-ASA.png"
+              alt="logo" style="max-width:500px; margin-top:-10px; width: 400px;">
+            <div class="text-stack">
+              <h1 class="norwester base2">KABINET JUANG ASA</h1>
+              <h1 class="norwester overlay" style="position: absolute;">KABINET JUANG ASA</h1>
+            </div>
+
+            <!-- SVG Curved Text for KABINET JUANG ASA - positioned below image -->
+            <!-- <div style="margin-top: 20px; width: 100%; max-width: 600px; position: absolute; transform: translateY(260px);">
+              <svg width="100%" viewBox="0 0 800 550" style="width: 100%; height: auto;">
+                <defs>
+                  
+                  <path id="kabinet-curve" d="M 100 50 Q 400 800 700 50" />
+                </defs>
+
+               
+                <text class="norwester curved-svg-base">
+                  <textPath href="#kabinet-curve" startOffset="50%" text-anchor="middle">
+                    KABINET JUANG ASA
+                  </textPath>
+                </text>
+
+                
+                <text class="norwester curved-svg-overlay" transform="translate(2, -2)">
+                  <textPath href="#kabinet-curve" startOffset="50%" text-anchor="middle">
+                    KABINET JUANG ASA
+                  </textPath>
+                </text>
+              </svg>
+            </div> -->
+          </div>
         </div>
       </header>
-      <div style="height:20px; background: linear-gradient(to right, red, orange); " class="mb-5"></div>
+      <div style="height:20px; background: linear-gradient(135deg, #96373f, #c14953, #e78d5b); " class="mb-5"></div>
 
 
       <div class="pb-5">
@@ -101,110 +269,128 @@ get_header();
         <?php // bs_after_primary(); 
         ?>
 
-        <div class="container entry-content">
-          <section class="mb-5">
-            <div class="row text-center mt-5" style="margin-top: 6rem !important; ">
-              <div class="col-lg-3 col-md-12 col-sm-12 text-lg-start text-sm-center">
-                <div class="d-flex justify-content-center align-items-center ">
-                  <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/4.png"
-                    alt="Logo Kabinet Aksata Kirana"
-                    style="width:100%; max-width:500px; height:auto;" />
-                </div>
-              </div>
-              <div class="col-lg-9 col-md-11 col-sm-12">
-                <h1 style="font-size:54px;color:#D75A5A;letter-spacing:5.6px;text-shadow:4px 3px 5px 0px rgba(48, 48, 48, 0.25);">KABINET JUANG ASA</h1>
-                <p style="font-size:26px" class="mt-2">JUANG ASA, GAPAI PERUBAHAN DAN IMPIAN</h3>
-                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-top:40px; text-align:center;">
-                  <!-- Baris pertama -->
-                  <a href="https://bem.fh.undip.ac.id/?page_id=77"
-                    class="btn btn-orange fw-bold shadow"
-                    style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px;">
-                    TENTANG KAMI
-                  </a>
-
-                  <a target="_blank"
-                    href="https://drive.google.com/file/d/1E_1w5BmT3uSptSutp60RPN3d1EZoIxnE/view"
-                    class="btn btn-orange fw-bold shadow"
-                    style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px;">
-                    GRAND DESIGN
-                  </a>
-
-                  <!-- Baris kedua (full width flex, lalu center) -->
-                  <div style="flex-basis:100%; display:flex; justify-content:center; margin-top:5px;">
-                    <a href="https://bem.fh.undip.ac.id/?page_id=25"
-                      class="fw-bold shadow"
-                      style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px;">
-                      STRUKTUR ORGANISASI
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <!-- Kabinet juang asa -->
+        <section style="display: flex; justify-content: center; align-items: center; ">
+          <div style="flex: 0 0 50%; display: flex; justify-content: center;">
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/4.png"
+              alt="Logo Kabinet Aksata Kirana"
+              style="width:100%; height:auto; max-width: 600px;" />
+          </div>
+          <div style="flex: 0 0 50%; display: flex; flex-direction: column;  align-items: center;">
+            <div class="text-stack " style="">
+              <h1 class="norwester base3">KABINET JUANG ASA</h1>
+              <h1 class="norwester overlay3" style="position: absolute;">KABINET JUANG ASA</h1>
+            </div>
+            <p class="norwester" style="font-size: 40px; text-align: center; color: #610008">JUANG ASA, GAPAI PERUBAHAN DAN IMPIAN</p>
+            <div class="norwester menu-box1">
+              <p class="menu-item1">TENTANG KAMI</p>
+              <p class="menu-item1">GRAND DESIGN</p>
+              <p class="menu-item1 center-item1">STRUKTUR ORGANISASI</p>
             </div>
 
-            <!-- visi misi -->
-            <div style="margin-block: 7rem;">
+          </div>
+        </section>
 
-              <!-- VISI -->
-              <div style="background-color:#D75A5A; padding:1rem; border-radius:1rem; margin-bottom:2rem;">
-                <h1 style="font-size:50px; color:white; text-align:center; margin-bottom:1.5rem;
-               text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">VISI</h1>
-                <p style="font-size:25px; color:white; text-align:center; margin:0;">
-                  "BEM FH Undip 2025 sebagai wadah pengkaderan yang berjuang bersama demi membawa pembaharuan
-                  untuk memberikan kebaikan pada FH Undip, Undip, dan Masyarakat"
-                </p>
-              </div>
 
-              <!-- MISI -->
-              <div style="background-color:#D75A5A; padding:1rem; border-radius:1rem;">
-                <h1 style="font-size:50px; color:white; text-align:center; margin-bottom:1.5rem;
-               text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">MISI</h1>
-                <p style="font-size:25px; color:white;  margin:0;">
-                  1. Menanamkan jiwa pengabdian melalui pengkaderan sebagai landasan perjuangan
-                </p>
-                <p style="font-size:25px; color:white; margin:0;">
-                  2. Merawat budaya responsif dan dialektika untuk mencapai nilai Juang Asa sehingga hidup rasa perjuangan dalam BEM FH Undip
-                </p>
-                <p style="font-size:25px; color:white; margin:0;">
-                  3. Menghasilkan pembaharuan karya pada BEM FH Undip 2025 dengan nilai Juang Asa
-                </p>
-                <p style="font-size:25px; color:white; margin:0;">
-                  4. Memberikan kebaikan yang terukur, berkelanjutan, dan berdampak untuk FH Undip, Undip, dan masyarakat
-                </p>
+        <!-- <section class="flex " style="display: flex; justify-content: center; width: 100%">
+          <div class="col-lg-3 col-md-12 col-sm-12 text-lg-start text-sm-center">
+            <div class="d-flex justify-content-center align-items-center ">
+              <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/4.png"
+                alt="Logo Kabinet Aksata Kirana"
+                style="width:100%; max-width:500px; height:auto;" />
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-11 col-sm-12">
+            <h1 class="norwester" style="font-size:54px;color:#D75A5A;letter-spacing:5.6px;text-shadow:4px 3px 5px 0px rgba(48, 48, 48, 0.25);">KABINET JUANG ASA</h1>
+            <p style="font-size:26px" class="mt-2">JUANG ASA, GAPAI PERUBAHAN DAN IMPIAN</h3>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px; margin-top:40px; text-align:center;">
+
+              <a href="https://bem.fh.undip.ac.id/?page_id=77"
+                class="btn btn-orange fw-bold shadow "
+                style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px; ">
+                TENTANG KAMI
+              </a>
+
+              <a target="_blank"
+                href="https://drive.google.com/file/d/1E_1w5BmT3uSptSutp60RPN3d1EZoIxnE/view"
+                class="btn btn-orange fw-bold shadow"
+                style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px;">
+                GRAND DESIGN
+              </a>
+
+
+              <div style="flex-basis:100%; display:flex; justify-content:center; margin-top:5px;">
+                <a href="https://bem.fh.undip.ac.id/?page_id=25"
+                  class="fw-bold shadow"
+                  style="background-color:#F05365; color:white; padding-inline:48px; padding-block:12px; border-radius:6px;">
+                  STRUKTUR ORGANISASI
+                </a>
               </div>
             </div>
+          </div>
+        </section> -->
 
-            <hr style="color: #F05365;border-top:4px solid;opacity: 0.75; ">
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                <h1 class="text-title fw-bolder" style="background-color:#F05365; border-radius:15px; color:white; display:inline-block; padding:5px 15px; margin-bottom: 20px; color: #FFF3E9; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">COMPANY PROFILE</h1>
-                <div style="display:flex; align-items:center; gap:20px;">
-                  <!-- Kolom teks -->
-                  <p style="color:#F05365; font-size:20px; width:50%; margin:0; text-align:justify;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla labore voluptate necessitatibus perspiciatis modi eum perferendis unde cumque ipsa aut reprehenderit, porro repellat sit ducimus nihil laboriosam libero numquam alias.
-                  </p>
-
-                  <!-- Kolom video -->
-                  <div style="width:50%; border-radius:15px; overflow:hidden;">
-                    <div class="ratio ratio-16x9">
-                      <iframe src="https://www.youtube.com/embed/bO8q9cAtkE4" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+        <!-- visi misi -->
+        <div style="margin-block: 7rem; font-weight: bold;" class="container roboto">
+          <!-- VISI -->
+          <div style="background-color: rgba(215, 91, 91, 0.66);  padding:1rem; border-radius:1rem; margin-bottom:2rem; background-opacity: 66%">
+            <h1 style="font-size:50px; color:#ebd4cd; text-align:center; margin-bottom:1.5rem;
+               text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008;">VISI</h1>
+            <p style="font-size:25px; color:#610008; text-align:center; margin:0;">
+              "BEM FH Undip 2025 sebagai wadah pengkaderan yang berjuang bersama demi membawa pembaharuan
+              untuk memberikan kebaikan pada FH Undip, Undip, dan Masyarakat"
+            </p>
+          </div>
+          <!-- MISI -->
+          <div style="background-color: rgba(215, 91, 91, 0.66); padding:1rem; border-radius:1rem;">
+            <h1 style="font-size:50px; color:#ebd4cd; text-align:center; margin-bottom:1.5rem;
+               text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008;">MISI</h1>
+            <p style="font-size:25px; color:#610008;margin:0;">
+              1. Menanamkan jiwa pengabdian melalui pengkaderan sebagai landasan perjuangan
+            </p>
+            <p style="font-size:25px; color:#610008; margin:0;">
+              2. Merawat budaya responsif dan dialektika untuk mencapai nilai Juang Asa sehingga hidup rasa perjuangan dalam BEM FH Undip
+            </p>
+            <p style="font-size:25px; color:#610008;margin:0;">
+              3. Menghasilkan pembaharuan karya pada BEM FH Undip 2025 dengan nilai Juang Asa
+            </p>
+            <p style="font-size:25px; color:#610008;  margin:0;">
+              4. Memberikan kebaikan yang terukur, berkelanjutan, dan berdampak untuk FH Undip, Undip, dan masyarakat
+            </p>
+          </div>
         </div>
+
+        <hr style="color: #F05365;border-top:4px solid;opacity: 0.75; " class="container">
+        <div class=" container">
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <h1 class="text-title fw-bolder norwester" style="letter-spacing: 5px;background-color: rgba(215, 91, 91, 0.66); border-radius:15px; color:white; display:inline-block; padding:5px 15px; margin-bottom: 20px; color: #FFF3E9; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">COMPANY PROFILE</h1>
+            <div style="display:flex; align-items:center; gap:20px;">
+              <!-- Kolom teks -->
+              <p style="color:#610008; font-size:20px; width:50%; margin:0; text-align:justify; font-weight: bold;" class="roboto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla labore voluptate necessitatibus perspiciatis modi eum perferendis unde cumque ipsa aut reprehenderit, porro repellat sit ducimus nihil laboriosam libero numquam alias.
+              </p>
+
+              <!-- Kolom video -->
+              <div style="width:50%; border-radius:15px; overflow:hidden;">
+                <div class="ratio ratio-16x9">
+                  <iframe src="https://www.youtube.com/embed/bO8q9cAtkE4" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
 
 
 
         <hr style="color: #FFF3E9;border-top:4px solid;opacity: 0.75;margin-block: 5rem;">
 
-        <section id="informasiterkini" class='bg-section'>
+        <section id="informasiterkini" class='bg-section ' style="background: linear-gradient(135deg, #dc713e, #aa2525, #dc713e);">
           <div class="container">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
-                <h2 class="text-white" style="font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">INFORMASI TERKINI</h2>
+                <h2 class=" norwester" style="color: #ebd4cd; font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">INFORMASI TERKINI</h2>
                 <div class="listinformasi ms-5 my-5">
                   <img style="border-radius: 2rem !important;margin-right: 2rem;cursor: pointer;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/06/EZINE-VOL-3-COVER-Recovered-min.png" alt="INFO 4" data-bs-toggle="modal" data-bs-target="#info4modal">
                   <a href="https://growwithkg.id/join-us" target="_blank">
@@ -240,7 +426,7 @@ get_header();
                 </div>
 
                 <!-- START Modal 1 -->
-                <div class="modal fade" id="info1modal" tabindex="-1" aria-labelledby="info1modalLabel" aria-hidden="true">
+                <div class="modal fade" id="info1modal" tabindex="-1" aria-labelledby="info1modalLabel">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-body">
@@ -288,7 +474,7 @@ get_header();
                 <!-- END Modal 1 -->
 
                 <!-- START Modal 6 -->
-                <div class="modal fade" id="info6modal" tabindex="-1" aria-labelledby="info1modalLabel" aria-hidden="true">
+                <div class="modal fade" style="background-color: black;" id="info6modal" tabindex="-1" aria-labelledby="info1modalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-body">
@@ -516,7 +702,7 @@ get_header();
                 </div>
                 <!-- END Modal -->
 
-                <a href="https://bem.fh.undip.ac.id/?page_id=76" class="btn btn-success shadow mb-5" style="border-radius: 0.75rem !important;">Lihat Informasi Lebih Banyaak</a>
+                <a href="https://bem.fh.undip.ac.id/?page_id=76" class="btn norwester shadow mb-5" style="padding: 20px;background-color:#255653;color: white; border-radius: 0.75rem !important; font-size: 20px;">Lihat Informasi Lebih Banyak</a>
               </div>
             </div>
           </div>
