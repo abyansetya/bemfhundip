@@ -426,7 +426,7 @@ get_header();
                 </div>
 
                 <!-- START Modal 1 -->
-                <div class="modal fade" id="info1modal" tabindex="-1" aria-labelledby="info1modalLabel">
+                <div class="modal fade" id="info1modal" tabindex="-1" aria-labelledby="info1modalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-body">
@@ -710,11 +710,11 @@ get_header();
 
         <hr style="color: #FFF3E9;border-top:4px solid;opacity: 0.75;margin-block: 4rem;">
 
-        <section id="kajian">
+        <section id="kajian" style="background: linear-gradient(135deg, #C84437, #DF783F); padding: 10px;">
           <div class="container">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
-                <h2 class="text-title fw-bolder">KAJIAN</h2>
+                <h2 class=" norwester" style="color: #ebd4cd; font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">PROGRAM KERJA</h2>
 
                 <div class="listkajian my-5">
                   <img style="border-radius: 2rem !important;cursor: pointer;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/1-2.jpg" alt="Kajian 1" data-bs-toggle="modal" data-bs-target="#kajian1modal">
@@ -737,7 +737,9 @@ get_header();
                   <img style="border-radius: 2rem !important;cursor: pointer;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/11/312988633_1249002798996484_9120823060364484999_n.jpg" alt="Kajian 14" data-bs-toggle="modal" data-bs-target="#kajian14modal">
                 </div>
 
-                <a href="https://bem.fh.undip.ac.id/?page_id=14" target="_blank" class="btn btn-success float-end"><span style="font-size: 13px;" class="px-3">Tampilkan Lebih Banyak</span></a>
+                <div style="display: flex; justify-content: center;">
+                  <a href="https://bem.fh.undip.ac.id/?page_id=14" target="_blank" class="btn norwester shadow mb-5 mt-3" style="padding: 20px;background-color:#255653;color: white; border-radius: 0.75rem !important; font-size: 20px;" class="px-3">Tampilkan Lebih Banyak</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1481,11 +1483,11 @@ get_header();
 
         <hr style="color: #FFF3E9;border-top:4px solid;opacity: 0.75;margin-block: 4rem;">
 
-        <section id="artikel">
+        <section id="artikel" style="background: linear-gradient(135deg, #c66500, #de773e); padding: 10px;">
           <div class="container">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
-                <h2 class="text-title fw-bolder">ARTIKEL</h2>
+                <h2 class=" norwester" style="color: #ebd4cd; font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">BEASISWA</h2>
 
                 <div class="listartikel my-5">
                   <img style="border-radius: 2rem !important;cursor: pointer;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/1-7.jpg" alt="Artikel 1" data-bs-toggle="modal" data-bs-target="#artikel1modal">
@@ -1544,7 +1546,9 @@ get_header();
                   </a>
                 </div>
 
-                <a href="https://bem.fh.undip.ac.id/?page_id=15" target="_blank" class="btn btn-success float-end"><span style="font-size: 13px;" class="px-3">Tampilkan Lebih Banyak</span></a>
+                <div style="display: flex; justify-content: center;">
+                  <a href="https://bem.fh.undip.ac.id/?page_id=15" target="_blank" class="btn norwester shadow mb-5 mt-3" style="padding: 20px;background-color:#255653;color: white; border-radius: 0.75rem !important; font-size: 20px;" class="px-3">Tampilkan Lebih Banyak</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1705,11 +1709,13 @@ get_header();
 
         <hr style="color: #FFF3E9;border-top:4px solid;opacity: 0.75;margin-block: 4rem;">
 
+        <div style="background-color: #d75b5b; width: fit-content; padding: 10px; border-radius: 10px; position: relative; left: 0px ">
+          <h2 class="text-title fw-bolder" style="color: #ebd4cd; text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008; font-size: 50px; letter-spacing: 10px;">KALENDER JUSTICIA</h2>
+        </div>
         <section id="kalender">
           <div class="container">
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
-                <h2 class="text-title fw-bolder">KALENDER JUSTICIA</h2>
+              <div class="col-lg-12 col-md-12 col-sm-12  mt-5">
 
                 <div class="row mt-5 mb-5">
                   <div class="col-lg-12 col-md-12 col-sm-12">
