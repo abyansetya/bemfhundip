@@ -1709,7 +1709,7 @@ get_header();
 
         <hr style="color: #FFF3E9;border-top:4px solid;opacity: 0.75;margin-block: 4rem;">
 
-        <div style="background-color: #d75b5b; width: fit-content; padding: 10px; border-radius: 10px; position: relative; left: 0px ">
+        <div style="background-color: #d75b5b; width: fit-content; padding: 10px; border-radius:0px 15px 15px 0px; position: relative; left: 0px ">
           <h2 class="text-title fw-bolder" style="color: #ebd4cd; text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008; font-size: 50px; letter-spacing: 10px;">KALENDER JUSTICIA</h2>
         </div>
         <section id="kalender">
