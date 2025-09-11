@@ -277,7 +277,7 @@ get_header();
               style="width:100%; height:auto; max-width: 600px;" />
           </div>
           <div style="flex: 0 0 50%; display: flex; flex-direction: column;  align-items: center;">
-            <div class="text-stack " style="">
+            <div class="text-stack ">
               <h1 class="norwester base3">KABINET JUANG ASA</h1>
               <h1 class="norwester overlay3" style="position: absolute;">KABINET JUANG ASA</h1>
             </div>
@@ -333,7 +333,7 @@ get_header();
         <!-- visi misi -->
         <div style="margin-block: 7rem; font-weight: bold;" class="container roboto">
           <!-- VISI -->
-          <div style="background-color: rgba(215, 91, 91, 0.66);  padding:1rem; border-radius:1rem; margin-bottom:2rem; background-opacity: 66%">
+          <div style="background-color: rgba(215, 91, 91, 0.66);  padding:1rem; border-radius:1rem; margin-bottom:2rem;">
             <h1 style="font-size:50px; color:#ebd4cd; text-align:center; margin-bottom:1.5rem;
                text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008;">VISI</h1>
             <p style="font-size:25px; color:#610008; text-align:center; margin:0;">
