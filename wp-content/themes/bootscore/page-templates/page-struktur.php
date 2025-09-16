@@ -233,6 +233,288 @@ get_header();
         top: 0;
         left: 0;
     }
+
+    .card-container {
+        max-width: 500px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+    }
+
+    .card-box {
+        border-radius: 2rem;
+        cursor: pointer;
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+        padding-right: 20px;
+        padding-left: 20px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        /* gambar tetap rata tengah secara horizontal */
+        align-items: flex-end;
+        /* gambar turun ke bawah */
+    }
+
+    .card-box img {
+        max-height: 300px;
+        border-radius: 2rem;
+    }
+
+    .card-container p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #f2f2f2;
+        /* outline utama */
+        text-shadow: -1px -1px 0 #610008,
+            1px -1px 0 #610008,
+            -1px 1px 0 #610008,
+            1px 1px 0 #610008;
+        /* fallback cross-browser */
+        margin: 2px;
+        /* hilangkan gap antar paragraf */
+        font-size: 14px;
+    }
+
+    /* NEW STYLES FOR BEM FH UNDIP CARDS */
+    .bem-cards-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .bem-card {
+        width: 250px;
+        height: 250px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .bem-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .bem-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        pointer-events: none;
+    }
+
+    /* Gradient backgrounds untuk setiap card */
+    .bem-card-1 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-2 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-3 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-4 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-5 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-6 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-7 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-8 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-9 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-10 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-11 {
+        background: linear-gradient(90deg, #cdaa50, #d59a64);
+    }
+
+    .bem-card-12 {
+        background: radial-gradient(circle at 0% 0%, #d75b5b, #96373f);
+    }
+
+    .bem-card-content {
+        text-align: center;
+        color: white;
+        z-index: 2;
+        position: relative;
+        padding: 20px;
+    }
+
+    .bem-card-icon {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-size: 2rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .bem-card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .bem-card-subtitle {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* Responsive design untuk BEM cards */
+    @media (max-width: 768px) {
+        .bem-cards-grid {
+            gap: 15px;
+        }
+
+        .bem-card {
+            width: 200px;
+            height: 200px;
+        }
+
+        .bem-card-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+
+        .bem-card-title {
+            font-size: 1rem;
+        }
+
+        .bem-card-subtitle {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .bem-cards-grid {
+            gap: 10px;
+        }
+
+        .bem-card {
+            width: 150px;
+            height: 150px;
+        }
+
+        .bem-card-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .bem-card-title {
+            font-size: 0.9rem;
+        }
+
+        .bem-card-subtitle {
+            font-size: 0.7rem;
+        }
+    }
+
+    /* Animasi masuk untuk BEM cards */
+    .bem-card {
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .bem-card:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .bem-card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .bem-card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .bem-card:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .bem-card:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+
+    .bem-card:nth-child(6) {
+        animation-delay: 0.6s;
+    }
+
+    .bem-card:nth-child(7) {
+        animation-delay: 0.7s;
+    }
+
+    .bem-card:nth-child(8) {
+        animation-delay: 0.8s;
+    }
+
+    .bem-card:nth-child(9) {
+        animation-delay: 0.6s;
+    }
+
+    .bem-card:nth-child(10) {
+        animation-delay: 0.7s;
+    }
+
+    .bem-card:nth-child(11) {
+        animation-delay: 0.8s;
+    }
+
+    .bem-card:nth-child(12) {
+        animation-delay: 0.8s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 
 <div id="content" class="site-content" style="background: #FFF3E9; margin-top: 100px;">
@@ -248,7 +530,7 @@ get_header();
                 <p class="roboto" style="font-weight: bold; font-size: 22px; color: #610008">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem perspiciatis repudiandae quas. Rem esse nobis eos recusandae eius odit porro debitis, eum, molestias laudantium totam et labore provident quaerat repudiandae!</p>
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; width: 40%">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/anggota/ketua.png" style="width: 500px">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/ketua.png" style="width: 500px">
                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #255653; padding: 10px; color: white; border-radius: 20px; border: 4px solid black; position: absolute; bottom: 0; width: max-content;">
                     <p style="font-size: 20px; margin-bottom:0">IMAM MOREZKI</p>
                     <p style="font-size: 20px; margin-bottom:0">KETUA BEM FH UNDIP 2025</p>
@@ -265,11 +547,8 @@ get_header();
             </div>
         </section>
 
-
-
         <!-- Struktur Organisasi -->
-        <!-- Struktur Organisasi -->
-        <section id="informasiterkini" class=' ' style="">
+        <section id="informasiterkini" class=' '>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
@@ -278,37 +557,247 @@ get_header();
                             <h1 class="norwester overlay" style="position: absolute; letter-spacing: 5px;">STRUKTUR ORGANISASI</h1>
                         </div>
                         <div class="listinformasi ms-5 my-5">
-                            <img style="border-radius: 2rem !important;margin-right: 2rem;cursor: pointer;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/06/EZINE-VOL-3-COVER-Recovered-min.png" alt="INFO 4" data-bs-toggle="modal" data-bs-target="#info4modal">
-                            <a href="https://growwithkg.id/join-us" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312909244_874059746932898_4633159012524419047_n.jpg" alt="INFO 7">
-                            </a>
-                            <a href="https://bit.ly/RegistrationSekolahMawapresII" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312897119_687872895733354_3940675789332418257_n.jpg" alt="INFO 8">
-                            </a>
-                            <a href="https://bit.ly/FormPengaduanMahasiswaFHUndip" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312926947_794103538370584_1879960172146694985_n.jpg" alt="INFO 9">
-                            </a>
-                            <a href="https://bit.ly/PendaftaranCompanyVisitFHUndip2022" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312489415_2666676853469922_7957767165266352823_n.jpg" alt="INFO 10">
-                            </a>
-                            <a href="https://bit.ly/DatabaseWirausahaFH" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312364892_628562362089793_9136934300546242441_n.jpg" alt="INFO 11">
-                            </a>
-                            <a href="https://bit.ly/PendataanMagangMahasiswaFHUndip" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312303448_1198219727400010_7583155193537373002_n.jpg" alt="INFO 12">
-                            </a>
-                            <a href="https://baznaskotasemarang.org/" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312241721_171573562192513_8828556874445129717_n.jpg" alt="INFO 13">
-                            </a>
-                            <a href="https://kekancanmukti.com/career" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/10/312165948_203863505353507_6831067476761496522_n.jpg" alt="INFO 14">
-                            </a>
-                            <a href="https://e-recruitment.indofood.com/110jobvacancy/frmjobvacancy.aspx" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/11/312960858_136449022502468_436563550317352165_n.jpg" alt="INFO 15">
-                            </a>
-                            <a href="bit.ly/OpregBeasiswaRagamHarapan" target="_blank">
-                                <img style="border-radius: 2rem !important;" src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/11/313048139_1295243481311117_8728371325433682643_n.jpg" alt="INFO 16">
-                            </a>
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/ketua.png" alt="INFO 4">
+                                </div>
+                                <p class="roboto">Imam Morezki</p>
+                                <p class="roboto">Ketua BEM</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Raffi_Ilya_WAKIL KETUA BEM.png" alt="INFO 4">
+                                </div>
+                                <p>Raffi Ilya</p>
+                                <p>Wakil Ketua BEM</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Adriana Erwindyo_SEKRETARIS UMUM I.png" alt="INFO 4">
+                                </div>
+                                <p>Adriana Erwindyo</p>
+                                <p>Sekretaris Umum I</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box" style="padding-top:25px;">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Karina Amala_SEKRETARIS UMUM II.png" alt="INFO 4">
+                                </div>
+                                <p>Karina Amala</p>
+                                <p>Sekretaris Umum II</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Jihan Amalia_SEKRETARIS UMUM III.png" alt="INFO 4">
+                                </div>
+                                <p>Jihan Amalia</p>
+                                <p>Sekretaris Umum III</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Nabila Nastiti_BENDAHARA UMUM I.png" alt="INFO 4">
+                                </div>
+                                <p>Nabila Nastiti</p>
+                                <p>Bendahara Umum I</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Callysta Tsania_BENDAHARA UMUM II.png" alt="INFO 4">
+                                </div>
+                                <p>Callysta Tsania</p>
+                                <p>Bendahara Umum II</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Viska Maghfira_BENDAHARA UMUM III.png" alt="INFO 4">
+                                </div>
+                                <p>Viska Maghfira</p>
+                                <p>Bendahara Umum III</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Meyrindey Simbolon_KOMISI AHLI PENGEMBANGAN POTENSI.png" alt="INFO 4">
+                                </div>
+                                <p>Meyrindey Simbolon</p>
+                                <p>Komisi Ahli Pengembangan Potensi</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Fiqhi Firmansyah_KOMISI AHLI PERGERAKAN.png" alt="INFO 4">
+                                </div>
+                                <p>Fiqhi Firmansyah</p>
+                                <p>Komisi Ahli Pergerakan</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Kepin Munte_KOMISI AHLI KADERISASI.png" alt="INFO 4">
+                                </div>
+                                <p>Kepin Munte</p>
+                                <p>Komisi Ahli Kaderisasi</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Nur Giafika_KOMISI AHLI KEMITRAAN.png" alt="INFO 4">
+                                </div>
+                                <p>Nur Giafika</p>
+                                <p>Komisi Ahli Kemitraan</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Rizky Nathan_KOMISI AHLI PENGABDIAN.png" alt="INFO 4">
+                                </div>
+                                <p>Rizky Nathan</p>
+                                <p>Komisi Ahli Pengabdian</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Allika Karamina_KETUA DIVISI SDM INSPEKTORAT PENJAMIN MUTU.png" alt="INFO 4">
+                                </div>
+                                <p>Allika Karamina</p>
+                                <p>Ketua Divisi SDM Inspektorat Penjamin Mutu</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Gilang_Putra_KETUA DIVISI APARATUR INSPEKTUR PENJAMIN MUTU.png" alt="INFO 4">
+                                </div>
+                                <p>Gilang Putra</p>
+                                <p>Ketua Divisi Aparatur Inspektur Penjamin Mutu</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Iqbal Muzakkiy_KEPALA KANTOR.png" alt="INFO 4">
+                                </div>
+                                <p>Iqbal Muzakkiy</p>
+                                <p>Kepala Kantor</p>
+                            </div>
+
+                            <div class="card-container">
+                                <div class="card-box">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/Pradyaksa PJ_INSPEKTUR PENJAMIN MUTU_.png" alt="INFO 4">
+                                </div>
+                                <p>Pradyaksa PJ</p>
+                                <p>Inspektur Penjamin Mutu</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Tubuh BEM FH -->
+        <section class="container" style="display: flex;flex-direction:column; align-items: center; margin-bottom: 50px">
+            <div class="text-stack " style="margin-bottom: 50px;">
+                <h1 class="norwester base" style="letter-spacing: 5px;">TUBUH DARI BEM FH UNDIP</h1>
+                <h1 class="norwester overlay" style="position: absolute; letter-spacing: 5px;">TUBUH DARI BEM FH UNDIP</h1>
+            </div>
+
+            <div class="bem-cards-grid">
+                <div class="bem-card bem-card-1">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/MINAT DAN BAKAT.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-2">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/EKONOMI KREATIF.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-3">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/PENGEMBANGAN SUMBER DAYA MAHASISWA.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-4">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/RISET DAN KEILMUAN.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-5">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/HUKUM, SOSIAL, DAN POLITIK.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-6">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/PEMBERDAYAAN PEREMPUAN.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-7">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/HUBUNGAN ANTAR LEMBAGA MASYARAKAT.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bem-card bem-card-8">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/KARIER DAN PROFESI.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-9">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/ADVOKESMA.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-10">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/PENGABDIAN MASYARAKAT.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bem-card bem-card-11">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/KANTOR MEDIA DAN INFORMASI.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bem-card bem-card-12">
+                    <div class="bem-card-content">
+                        <div class="bem-card-icon">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/bidang/INSPEKTORAT PENJAMIN MUTU.png" alt="">
                         </div>
                     </div>
                 </div>
