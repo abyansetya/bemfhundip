@@ -4,73 +4,148 @@
  * Template Name: Merchandise
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Bootscore
  */
 
 get_header();
 ?>
 
-<div id="content" class="site-content" style=" background:linear-gradient(135deg, #dc713e, #e58741, #dc713e);">
+<style>
+    @font-face {
+        font-family: 'Norwester';
+        src: url('<?php echo get_stylesheet_directory_uri(); ?>/fontawesome/webfonts/Norwester-Regular.woff2') format('woff2'),
+            url('<?php echo get_stylesheet_directory_uri(); ?>/fontawesome/webfonts/Norwester-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('<?php echo get_stylesheet_directory_uri(); ?>/fontawesome/webfonts/Roboto.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Copperplate Gothic 29 AB';
+        src: url('<?php echo get_stylesheet_directory_uri(); ?>/fontawesome/webfonts/Copperplate-Gothic-Std-29-AB.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .norwester {
+        font-family: 'Norwester', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .roboto {
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .merch-title {
+        font-family: 'Norwester', sans-serif;
+        color: #fff;
+        font-size: 60px;
+        letter-spacing: 4px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 32px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .merch-card {
+        background: none;
+        border: none;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .merch-img {
+        width: 260px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 1.2rem;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .merch-name {
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 4px;
+        letter-spacing: 1px;
+    }
+
+    .merch-price {
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 16px;
+        letter-spacing: 1px;
+    }
+
+    .merch-btn {
+        background: #255653;
+        color: #fff;
+        font-family: 'Copperplate Gothic 29 AB', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        padding: 10px 32px;
+        margin-bottom: 8px;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: background 0.2s;
+    }
+
+    .merch-btn:hover {
+        background: #1d403f;
+        color: #fff;
+    }
+</style>
+padding: 10px 32px;
+margin-bottom: 8px;
+border: none;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+transition: background 0.2s;
+}
+
+.merch-btn:hover {
+background: #1d403f;
+color: #fff;
+}
+</style>
+<div id="content" class="site-content" style="background:linear-gradient(135deg, #dc713e, #e58741, #dc713e); min-height:100vh;">
     <div id="primary" class="content-area">
-
-        <!-- Hook to add something nice -->
         <?php bs_after_primary(); ?>
-
         <main id="main" class="site-main">
-
-            <section id="listkajian">
-                <div class="container" style="margin-top: 6rem;">
-                    <!-- START ROW 1 -->
-                    <div class="row text-center mt-5 mb-5">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch2.png" alt="merch2">
-                            <h5>NOTE BOOK “Justice For All”</h5>
-                            <h5 style="color: #AE3F30;">Rp. 55.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch3.png" alt="merch3">
-                            <h5>STICKER</h5>
-                            <h5 style="color: #AE3F30;">Rp. 15.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch7.png" alt="merch7">
-                            <h5>TOTEBAG JUSTICE</h5>
-                            <h5 style="color: #AE3F30;">Rp. 65.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
+            <div class="container" style="margin-top: 120px;">
+                <div class="merch-title norwester">MERCHANDISE</div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 merch-card">
+                        <img class="merch-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merchandise/merch.png" alt="merch1">
+                        <div class="merch-name roboto">Tas Handphone Sepatu</div>
+                        <div class="merch-price">Rp, xxx.xxx</div>
+                        <a href="#" class="merch-btn">PESAN DISINI</a>
                     </div>
-                    <!-- END ROW 1 -->
-                    <div class="row text-center mt-5 mb-5">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch4.png" alt="merch4">
-                            <h5>BOOKS</h5>
-                            <h6>Hukum Perdata, Ilmu Negara, KUHP, Pendidikan Pancasila </h6>
-                            <h5 style="color: #AE3F30;">Rp. 85.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch5.png" alt="merch5">
-                            <h5>T-SHIRT Faculty of Law</h5>
-                            <h5 style="color: #AE3F30;">Rp. 85.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <img src="https://bem.fh.undip.ac.id/wp-content/uploads/2022/08/merch6.png" alt="merch6">
-                            <h5>Training Pants</h5>
-                            <h5 style="color: #AE3F30;">Rp. 90.000</h5>
-                            <a href="https://page.line.me/whl3810k" target="_blank" class="btn btn-success text-white px-5">Pesan Disini</a>
-                        </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 merch-card">
+                        <img class="merch-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merchandise/merch.png" alt="merch2">
+                        <div class="merch-name roboto">Kaos PKKMB</div>
+                        <div class="merch-price">Rp, xxx.xxx</div>
+                        <a href="#" class="merch-btn">PESAN DISINI</a>
                     </div>
-
+                    <div class="col-lg-4 col-md-6 col-sm-12 merch-card">
+                        <img class="merch-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/merchandise/merch.png" alt="merch3">
+                        <div class="merch-name roboto">Gantungan Kunci</div>
+                        <div class="merch-price">Rp, xxx.xxx</div>
+                        <a href="#" class="merch-btn bold">PESAN DISINI</a>
+                    </div>
                 </div>
-            </section>
-
-        </main><!-- #main -->
-
-    </div><!-- #primary -->
-</div><!-- #content -->
+            </div>
+        </main>
+    </div>
+</div>
 <?php
 get_footer();
