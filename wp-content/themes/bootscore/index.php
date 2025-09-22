@@ -154,6 +154,15 @@ get_header();
       font-size: 24px;
       letter-spacing: 1px;
     }
+
+    .text-stack h1 {
+      font-size: 32px;
+      /* lebih kecil dari default 64px */
+    }
+
+    .logoutama {
+      width: 200px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -162,6 +171,23 @@ get_header();
     .curved-svg-overlay {
       font-size: 18px;
       letter-spacing: 0.5px;
+    }
+
+    .text-stack h1 {
+      font-size: 24px;
+      /* lebih kecil lagi untuk layar sangat kecil */
+    }
+
+    .logoutama {
+      width: 200px;
+    }
+
+    .juangasa {
+      flex-direction: column;
+    }
+
+    .video {
+      flex-direction: column-reverse;
     }
   }
 
@@ -228,7 +254,7 @@ get_header();
           <div style="display: flex; flex-direction: column; align-items: center;">
             <!-- Logo Image -->
             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/LOGO-JUANG-ASA.png"
-              alt="logo" style="max-width:500px; margin-top:-10px; width: 400px;">
+              alt="logo" style="max-width:500px; margin-top:-10px; width: 400px;" class="logoutama">
             <div class="text-stack">
               <h1 class="norwester base2">KABINET JUANG ASA</h1>
               <h1 class="norwester overlay" style="position: absolute;">KABINET JUANG ASA</h1>
@@ -270,7 +296,7 @@ get_header();
         ?>
 
         <!-- Kabinet juang asa -->
-        <section style="display: flex; justify-content: center; align-items: center; ">
+        <section class="juangasa" style="display: flex; justify-content: center; align-items: center; ">
           <div style="flex: 0 0 50%; display: flex; justify-content: center;">
             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/4.png"
               alt="Logo Kabinet Aksata Kirana"
@@ -364,7 +390,7 @@ get_header();
         <div class=" container">
           <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <h1 class="text-title fw-bolder norwester" style="letter-spacing: 5px;background-color: rgba(215, 91, 91, 0.66); border-radius:15px; color:white; display:inline-block; padding:5px 15px; margin-bottom: 20px; color: #FFF3E9; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">COMPANY PROFILE</h1>
-            <div style="display:flex; align-items:center; gap:20px;">
+            <div class="video" style="display:flex; align-items:center; gap:20px;">
               <!-- Kolom teks -->
               <p style="color:#610008; font-size:20px; width:50%; margin:0; text-align:justify; font-weight: bold;" class="roboto">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla labore voluptate necessitatibus perspiciatis modi eum perferendis unde cumque ipsa aut reprehenderit, porro repellat sit ducimus nihil laboriosam libero numquam alias.
