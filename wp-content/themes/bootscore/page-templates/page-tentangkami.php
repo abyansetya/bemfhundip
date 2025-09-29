@@ -57,7 +57,7 @@ get_header();
     }
 
     .text-stack h1 {
-        font-size: 54px;
+        font-size: 45px;
         margin: 0;
         /* menumpuk satu sama lain */
         top: 0;
@@ -88,7 +88,66 @@ get_header();
             0 0 0px white,
             0 0 20px white;
     }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .fade-left {
+        opacity: 0;
+    }
+
+    .fade-right {
+        opacity: 0;
+    }
+
+    .fade-left.active {
+        animation: fadeInLeft 1s ease-out forwards;
+    }
+
+    .fade-right.active {
+        animation: fadeInRight 1s ease-out forwards;
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const faders = document.querySelectorAll(".fade-left, .fade-right");
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    obs.unobserve(entry.target); // animasi sekali saja
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        faders.forEach(el => observer.observe(el));
+    });
+</script>
 
 <div id="content" class="site-content" style="background: #FFF3E9;">
     <div id="primary" class="content-area">
@@ -101,8 +160,8 @@ get_header();
             <header class="entry-header  text-light mb-5" style="background-image: url('https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/1.png'); ">
                 <div class="container entry-header d-flex flex-column align-items-center" style="height: 500px; justify-content: end;">
                     <div class="text-stack" style="margin-bottom: 15px;">
-                        <h1 class="norwester base" style="letter-spacing: 5px;">ABOUT US BEM FAKULTAS HUKUM UNDIP 2025</h1>
-                        <h1 class="norwester overlay" style="position: absolute; letter-spacing: 5px;">ABOUT US BEM FAKULTAS HUKUM UNDIP 2025</h1>
+                        <h1 class="norwester base" style="letter-spacing: 5px; text-align: center;">ABOUT US BEM FAKULTAS HUKUM UNDIP 2025</h1>
+                        <h1 class="norwester overlay" style="position: absolute; letter-spacing: 5px; text-align: center;">ABOUT US BEM FAKULTAS HUKUM UNDIP 2025</h1>
                     </div>
                 </div>
             </header>
@@ -113,7 +172,7 @@ get_header();
                 <div class="container mt-5">
                     <div class="row" style="margin-bottom: 80px">
                         <div class="col-lg-4 col-md-4 col-sm-4">
-                            <img class="img-fluid px-5 " src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-PADI-DAN-KAPAS.png" alt="Logo-1">
+                            <img class="img-fluid px-5 fade-left" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-PADI-DAN-KAPAS.png" alt="Logo-1">
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8">
                             <h3 style="text-align: justify;line-height: 1.5; color:#b04359; font-size: 34px;" class="norwester">
@@ -127,7 +186,7 @@ get_header();
 
                     <div class="row" style="margin-bottom: 80px">
                         <div class="col-lg-4 col-md-4 col-sm-4">
-                            <img class="img-fluid px-5" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-KELOPAK-DAN-PADI.png" alt="Logo-1">
+                            <img class="img-fluid px-5 fade-left" src="https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/LOGO-JUANG-ASA-KELOPAK-DAN-PADI.png" alt="Logo-1">
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8">
                             <h3 style="text-align: justify;line-height: 1.5; color:#cdaa50; font-size: 34px;" class="norwester">
@@ -148,7 +207,7 @@ get_header();
                 <div class="container mt-5" style="display: flex; flex-direction: column; align-items: center">
                     <div class="row" style="margin-bottom: 70px">
                         <div class="col-lg-4 col-md-4 col-sm-4" style="display: flex; justify-content: center">
-                            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bulat-merah.png"
+                            <img class="fade-left" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bulat-merah.png"
                                 alt="logo"
                                 style="max-width: 250px; width: 100%; height: auto; object-fit: contain;">
                         </div>
@@ -167,7 +226,7 @@ get_header();
                                 <span style="color:#cdaa50; text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008;">Emas </span> kami definisikan sebagai kebahagiaan dan romantisme. Dalam konteksnya, kebahagiaan kami artikan bahwa BEM FH Undip memberikan kebermanfaatan untuk menciptakan kebahagiaan seluas-luasnya melalui program yang dilaksanakan pada segenap mahasiswa, masyarakat, dan lingkungan.
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4" style="display: flex; justify-content: end">
-                            <img src=" <?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bulat-emas.png"
+                            <img class="fade-right" src=" <?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/bulat-emas.png"
                                 alt="logo"
                                 style="max-width: 250px; width: 100%; height: auto; object-fit: contain;">
                         </div>

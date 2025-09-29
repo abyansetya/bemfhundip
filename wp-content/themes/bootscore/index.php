@@ -96,19 +96,14 @@ get_header();
     opacity: 50%;
   }
 
-  .text-stack .overlay {
-    color: white;
-    top: -2px;
-    /* geser ke bawah */
-    left: -6px;
-    /* geser ke kiri */
-    text-shadow:
-      0 0 0px white,
-      0 0 0px white,
-      0 0 0px white,
-      0 0 0px white,
-      0 0 20px white;
+  .text-stack {
+    position: relative;
+    display: inline-block;
+    /* biar absolute position bekerja */
   }
+
+
+
 
   .text-stack .overlay3 {
     color: #ce770c;
@@ -232,7 +227,113 @@ get_header();
     width: fit-content;
     /* biar kotaknya ngepas isi */
   }
+
+  /* Fade in untuk teks overlay */
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      /* melayang sedikit dari bawah */
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in untuk logo Juang Asa */
+  @keyframes fadeInLogo {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes fadelogoutama {
+    from {
+      scale: 110%;
+    }
+
+    to {
+      scale: 100%;
+    }
+  }
+
+  .text-stack .overlay {
+    position: absolute;
+    color: white;
+    top: -2px;
+    left: -6px;
+    text-shadow:
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 0px white,
+      0 0 20px white;
+    opacity: 0;
+  }
+
+  .text-stack .overlay.fade-in-active {
+    animation: fadeInText 0.2s ease-out forwards;
+    animation-delay: 0.2s;
+    /* tunggu 0.5 detik dulu */
+  }
+
+  .logoutama1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 200px;
+    height: auto;
+    opacity: 0;
+  }
+
+  .logoutama.fade-in-active {
+    animation: fadelogoutama 1s;
+  }
+
+  .logoutama1.fade-in-active {
+    animation: fadeInLogo 1.2s ease-out forwards;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const logo = document.querySelector(".logoutama1");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          logo.classList.add("fade-in-active");
+          observer.unobserve(logo); // supaya animasi hanya sekali
+        }
+      });
+    });
+
+    observer.observe(logo);
+  });
+
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   const el = document.getElementById("overlay-text");
+  //   const text = el.innerText;
+  //   el.innerHTML = "";
+
+  //   [...text].forEach((char, i) => {
+  //     const span = document.createElement("span");
+  //     span.textContent = char === " " ? "\u00A0" : char;
+  //     span.style.animationDelay = (i * 0.1) + "s"; // delay 0.1s per huruf
+  //     el.appendChild(span);
+  //   });
+
+  // });
+</script>
 
 
 <div id="content" class="site-content" style="background: #FFF3E9;">
@@ -242,47 +343,26 @@ get_header();
 
       <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
       <header class="entry-header featured-full-width-img  d-flex align-items-center justify-content-center text-center"
-        style="background-position: center; background-size: cover; background-color: #FFF3E9; height:100vh; background-image: url('https://bem.fh.undip.ac.id/wp-content/uploads/2025/08/2.png');">
+        style="background-position: center; background-size: cover; background-color: #FFF3E9; height:100vh; background-image: url('<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/2.png');">
 
         <!-- HERO SECTION -->
         <div class="" style="display:flex; flex-direction: column; align-items:center;">
           <div class="text-stack">
             <h1 class="norwester base">WELCOME TO <br> BEM FH UNDIP 2025</h1>
-            <h1 class="norwester overlay" style="position: absolute;">WELCOME TO <br> BEM FH UNDIP 2025</h1>
+            <h1 class="norwester overlay fade-in-active">WELCOME TO <br> BEM FH UNDIP 2025</h1>
           </div>
           <br>
           <div style="display: flex; flex-direction: column; align-items: center;">
             <!-- Logo Image -->
             <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/LOGO-JUANG-ASA.png"
-              alt="logo" style="max-width:500px; margin-top:-10px; width: 400px;" class="logoutama">
+              alt="logo" style="max-width:500px; margin-top:-10px; width: 400px;" class="logoutama fade-in-active">
+
             <div class="text-stack">
               <h1 class="norwester base2">KABINET JUANG ASA</h1>
-              <h1 class="norwester overlay" style="position: absolute;">KABINET JUANG ASA</h1>
+              <h1 class="norwester overlay fade-in-active" id="overlay-text">
+                KABINET JUANG ASA
+              </h1>
             </div>
-
-            <!-- SVG Curved Text for KABINET JUANG ASA - positioned below image -->
-            <!-- <div style="margin-top: 20px; width: 100%; max-width: 600px; position: absolute; transform: translateY(260px);">
-              <svg width="100%" viewBox="0 0 800 550" style="width: 100%; height: auto;">
-                <defs>
-                  
-                  <path id="kabinet-curve" d="M 100 50 Q 400 800 700 50" />
-                </defs>
-
-               
-                <text class="norwester curved-svg-base">
-                  <textPath href="#kabinet-curve" startOffset="50%" text-anchor="middle">
-                    KABINET JUANG ASA
-                  </textPath>
-                </text>
-
-                
-                <text class="norwester curved-svg-overlay" transform="translate(2, -2)">
-                  <textPath href="#kabinet-curve" startOffset="50%" text-anchor="middle">
-                    KABINET JUANG ASA
-                  </textPath>
-                </text>
-              </svg>
-            </div> -->
           </div>
         </div>
       </header>
@@ -297,11 +377,16 @@ get_header();
 
         <!-- Kabinet juang asa -->
         <section class="juangasa" style="display: flex; justify-content: center; align-items: center; ">
-          <div style="flex: 0 0 50%; display: flex; justify-content: center;">
-            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/4.png"
+          <div style="flex: 0 0 50%; display: flex; justify-content: center; position: relative;">
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/41.png"
               alt="Logo Kabinet Aksata Kirana"
               style="width:100%; height:auto; max-width: 600px;" />
+
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo/LOGO-JUANG-ASA.png"
+              alt="Logo Juang Asa"
+              class="logoutama1" />
           </div>
+
           <div style="flex: 0 0 50%; display: flex; flex-direction: column;  align-items: center;">
             <div class="text-stack ">
               <h1 class="norwester base3">KABINET JUANG ASA</h1>

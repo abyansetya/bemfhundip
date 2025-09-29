@@ -3,7 +3,7 @@
 /**
  * Template Name: Struktur Organisasi
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/BEMasics/template-hierarchy/
  *
  * @package Bootscore
  */
@@ -455,58 +455,64 @@ get_header();
     }
 
     /* Animasi masuk untuk BEM cards */
+    /* kondisi awal */
     .bem-card {
-        animation: fadeInUp 0.6s ease forwards;
         opacity: 0;
         transform: translateY(30px);
     }
 
-    .bem-card:nth-child(1) {
+    /* aktif saat discroll */
+    .bem-card.animate {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* delay per urutan */
+    .bem-card:nth-child(1).animate {
         animation-delay: 0.1s;
     }
 
-    .bem-card:nth-child(2) {
+    .bem-card:nth-child(2).animate {
         animation-delay: 0.2s;
     }
 
-    .bem-card:nth-child(3) {
+    .bem-card:nth-child(3).animate {
         animation-delay: 0.3s;
     }
 
-    .bem-card:nth-child(4) {
+    .bem-card:nth-child(4).animate {
         animation-delay: 0.4s;
     }
 
-    .bem-card:nth-child(5) {
+    .bem-card:nth-child(5).animate {
         animation-delay: 0.5s;
     }
 
-    .bem-card:nth-child(6) {
+    .bem-card:nth-child(6).animate {
         animation-delay: 0.6s;
     }
 
-    .bem-card:nth-child(7) {
+    .bem-card:nth-child(7).animate {
         animation-delay: 0.7s;
     }
 
-    .bem-card:nth-child(8) {
+    .bem-card:nth-child(8).animate {
         animation-delay: 0.8s;
     }
 
-    .bem-card:nth-child(9) {
-        animation-delay: 0.6s;
+    .bem-card:nth-child(9).animate {
+        animation-delay: 0.9s;
     }
 
-    .bem-card:nth-child(10) {
-        animation-delay: 0.7s;
+    .bem-card:nth-child(10).animate {
+        animation-delay: 1s;
     }
 
-    .bem-card:nth-child(11) {
-        animation-delay: 0.8s;
+    .bem-card:nth-child(11).animate {
+        animation-delay: 1.1s;
     }
 
-    .bem-card:nth-child(12) {
-        animation-delay: 0.8s;
+    .bem-card:nth-child(12).animate {
+        animation-delay: 1.2s;
     }
 
     @keyframes fadeInUp {
@@ -515,7 +521,67 @@ get_header();
             transform: translateY(0);
         }
     }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+            /* mulai agak ke bawah */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            /* kembali ke posisi normal */
+        }
+    }
+
+    .fade-up {
+        opacity: 0;
+        /* awalnya tersembunyi */
+    }
+
+    .fade-up.active {
+        animation: fadeInUp 1s ease-out forwards;
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const faders = document.querySelectorAll(".fade-up");
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    obs.unobserve(entry.target); // animasi sekali saja
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        faders.forEach(el => observer.observe(el));
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const cards = document.querySelectorAll(".bem-card");
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                    // Hapus baris ini kalau mau animasi bisa diulang saat scroll bolak-balik
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => observer.observe(card));
+    });
+</script>
 
 <div id="content" class="site-content" style="background: #FFF3E9; margin-top: 100px;">
     <div id="primary" class="content-area">
@@ -525,13 +591,13 @@ get_header();
 
 
         <h2 class=" d-inline-block sailor-condensed" style="color: #ebd4cd;letter-spacing: 5px; font-size: 54px;text-shadow: -2px -2px 0 #610008, 2px -2px 0 #610008, -2px 2px 0 #610008, 2px 2px 0 #610008; background: #D75B5B; padding-inline: 4rem; padding-block: 12px; border-radius:0px 15px 15px 0px; margin-bottom: 32px">KATA SAMBUTAN</h2>
-        <section class="container" style="display: flex; align-items: center; margin-bottom: 50px">
+        <section class="container" style="display: flex; align-items: center; margin-bottom: 50px; ">
             <div>
                 <p class="roboto" style="font-weight: bold; font-size: 22px; color: #610008">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem perspiciatis repudiandae quas. Rem esse nobis eos recusandae eius odit porro debitis, eum, molestias laudantium totam et labore provident quaerat repudiandae!</p>
             </div>
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; width: 40%">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/pengurus/ketua.png" style="width: 500px">
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #255653; padding: 10px; color: white; border-radius: 20px; border: 4px solid black; position: absolute; bottom: 0; width: max-content;">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; ">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/imam.png" style="width: 700px; margin-bottom: 30px" class="fade-up">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #255653; padding: 10px; color: white; border-radius: 20px; border: 4px solid black; position: absolute; bottom: 0; width: max-content; ">
                     <p style="font-size: 20px; margin-bottom:0">IMAM MOREZKI</p>
                     <p style="font-size: 20px; margin-bottom:0">KETUA BEM FH UNDIP 2025</p>
                 </div>
@@ -545,6 +611,7 @@ get_header();
                 <h1 class="norwester base" style="letter-spacing: 5px;">ORGANOGRAM</h1>
                 <h1 class="norwester overlay" style="position: absolute; letter-spacing: 5px;">ORGANOGRAM</h1>
             </div>
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/organogram.png" alt="">
         </section>
 
         <!-- Struktur Organisasi -->
